@@ -1,44 +1,40 @@
-class LocalStorageUtil  {
+class LocalStorageUtils {
     constructor() {
-        this.keyname = "products"
+        this.keyname = "products";
     }
 
-    getProducts() {
-        const getProductsLocalStorage = localStorage.getItem(this.keyname);
-
-        if(getProductsLocalStorage !== null) {
-            return JSON.parse(getProductsLocalStorage);
+    getLocalValue() {
+        const localStorageValue = localStorage.getItem(this.keyname);
+        
+        if(localStorageValue !== null) {
+            return JSON.parse(localStorageValue)
         } else {
             return [];
         }
     }
 
-    putProducts(id) {
-        let products = this.getProducts();
-        let pushProduct = false;
-
-        let index = products.indexof(id)
-
+    setLocalValue(id) {
+        const getlocalStorageValue = this.getLocalValue();
+        let index = getlocalStorageValue.indexOf(id);
+        let pushProductsValue = false;
+        
         if(index === -1) {
-            products.push(id);
-            pushProduct = true
+            getlocalStorageValue.push(id);
+            pushProductsValue = true;
         } else {
-            products.splice(index, 1)
+            getlocalStorageValue.splice(index, 1);
         }
 
-       
-        localStorage.setItem(this.keyname, JSON.stringify(products))
+        localStorage.setItem(this.keyname, JSON.stringify(getlocalStorageValue))
 
         return {
-            products,
-            pushProduct
+            getlocalStorageValue,
+            pushProductsValue
         }
-
     }
+
 }
 
-const localStorageUtil = new LocalStorageUtil();
+const localStorageUtils = new LocalStorageUtils();
 
-
-
-
+ 
