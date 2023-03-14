@@ -11,11 +11,12 @@ class Product {
 
         if(pushProductsValue) {
             element.innerHTML = this.textRemove;
-            element.classList.add(this.activeClass)
+            element.classList.add(this.activeClass);
         } else {
             element.innerHTML = this.textAdd;
             element.classList.remove(this.activeClass)
         }
+        headerPage.render(getlocalStorageValue.length)
        
     } 
 
@@ -36,8 +37,6 @@ class Product {
                 activeClass +=  this.activeClass;
             }
            
-
-
             htmlCatalog += `
             <li class="products-element">
                 <span class="products-element__name">${name}</span>
