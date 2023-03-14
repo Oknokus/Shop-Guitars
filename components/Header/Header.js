@@ -1,8 +1,14 @@
 class Header {
+    handleClickProductsShop() {
+        shopPage.render()
+    }
+    
     render(count) {
         const htmlContainer = `
             <div class="header-container">
-                <div class="header-container__counter">🔥 ${count}</div>    
+                <div 
+                    class="header-container__counter"
+                    onClick="headerPage.handleClickProductsShop()">🔥 ${count}</div>    
             </div>
         `;
         

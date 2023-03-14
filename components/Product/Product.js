@@ -7,7 +7,7 @@ class Product {
 
 
     handleClickBtn (element, id) {        
-        const {getlocalStorageValue, pushProductsValue} = localStorageUtils.setLocalValue(id)  
+        const {getlocalStorageValue, pushProductsValue} = localStorageUtils.setLocalValue(id);  
 
         if(pushProductsValue) {
             element.innerHTML = this.textRemove;
