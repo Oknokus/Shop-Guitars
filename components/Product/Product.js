@@ -16,8 +16,8 @@ class Product {
             element.innerHTML = this.textAdd;
             element.classList.remove(this.activeClass)
         }
-        headerPage.render(getlocalStorageValue.length)
-       
+
+        headerPage.render(getlocalStorageValue.length)       
     } 
 
     render() {
@@ -61,4 +61,3 @@ class Product {
 }
 
 const productPage = new Product;
-productPage.render();
